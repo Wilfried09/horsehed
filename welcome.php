@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Horseshed - Home</title>
 </head>
+<body>
 <?php
 
 session_start();
@@ -14,4 +15,7 @@ if(isset($_SESSION['login']) && $_SESSION['login']=='ok'){
     die('Erreur d\'authentification');
 }
 ?>
+
+</body>
 </html>
+
