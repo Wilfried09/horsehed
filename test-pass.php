@@ -3,13 +3,17 @@
 session_start();
 $SID=session_id();
 include('connection.php');
+if(isset($_POST['identifiant']) && isset($_POST['password'])){
+    accessBDD($_POST['identifiant'], $_POST['password'], $SID);
+}else{
+    $_SESSION=array();
+    //$_GET['step']='ERREUR';
+    header("Location: login.php?step=ERREUR");
+}
 
-if(isset($_POST['identifiant']) && isset($_POST['password'])) {
+/* if(isset($_POST['identifiant']) && isset($_POST['password'])) {
     //Se connecter à la BDD et vérifier si les infos existent
-    $request = "SELECT * FROM user WHERE identifiant='" . $_POST['identifiant'] . "' AND password='" . $_POST['password']."'";
-
-    $con = accessBDD();
-    $result = searchBDD($con,$request);
+    $request = "SELECT * FROM user WHERE User='" . $_POST['identifiant'] . "' AND Password='" . $_POST['password']."'";
 
     if ($result) {
         $_SESSION['login']='ok';
@@ -26,4 +30,4 @@ if(isset($_POST['identifiant']) && isset($_POST['password'])) {
     $_SESSION=array();
     //$_GET['step']='ERREUR';
     header("Location: login.php?step=ERREUR");
-}
+}*/

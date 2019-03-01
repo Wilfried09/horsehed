@@ -8,9 +8,9 @@ if (!isset($_GET['step'])){
     }
     ?>
     <form action="test-pass.php" method="post">
-        Login : <input type="text" name="identifiant"/><br>
+        Identifiant : <input type="text" name="identifiant"/><br>
         Mot de passe : <input type="password" name="password"/><br>
-        <input type="submit" name="login" value="ok"/><br>
+        <input type="submit" name="login" value="Connexion"/><br>
     </form>
     <?php
 }
